@@ -1,0 +1,192 @@
+#include <stdio.h>
+#include <locale.h>
+#include <stdlib.h>
+#include <conio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main (){
+	setlocale(LC_ALL, "Portuguese");
+	
+	int i, a, b, c, d, x, y, z;
+	char nome[20], pers[10];
+	
+	b = 20;
+	c = 0;
+	
+	printf("Escolha uma arma:\n\n1.Espada\n2.Arco\n3.Corrente\n");
+	scanf("%d", &x);
+	
+if(x == 1){
+	printf("\nVocê escolheu a espada.\nUse-a com sabedoria!\n\n\n");
+	
+} else if(x == 2){
+	printf("\nVocê escolheu o arco.\nMire com cautela!\n\n\n");
+	
+} else if(x == 3){
+	printf("\nVocê escolheu a corrente.\n...por que??\n\n\n");
+	
+} else if(x >= 4) exit(0);
+
+
+
+
+	printf("Dê um nome para seu fiel, e ÚNICO, companheiro?\n");
+	scanf("%s", nome);
+	
+	printf("\n%s é o nome da sua arma?!", nome);
+	printf("\n\n1.Confirmar\n2.Refazer\n");
+	scanf("%d", &y);
+	
+if(y == 1){
+	printf("Tudo bem, você e sua arma fazem parte de um só agora!\n\n");	
+} else if(y == 2){
+	printf("\nQual nome você gostaria de colocar?\n");
+	scanf("%s", &nome);
+
+	printf("\n%s é o novo nome de sua arma?!\n1.Sim\n2.Não\n", nome);
+	scanf("%d", &z);
+	
+if(z == 1){
+	printf("\nTudo bem, você e sua arma fazem parte de um só agora!\n\n");
+} else if(z == 2){
+	printf("\nTriste né, amigão... O nome dela vai continuar sendo %s\n\n", nome);	
+} else if(z >= 3) exit(0);
+}
+	
+	printf("Você deseja testar %s?\n1.Sim\n2.Não\n", nome);
+	scanf("%d", &a);
+ system ("cls");
+ if(a == 1){
+switch(x){
+ 	case 1:
+	printf("Com sua espada você faz movimentos circulares.\n\n*VUOM* *ZUOM*\n\nE repousa ela sob seu ombro.\nFoi bem bonito!\n\n");
+ 	printf("À sua esquerda você enxerga uma árvore, deseja usar-la como 'boneco de teste'?\n1.Sim\n2.Não\n");
+ 	scanf("%d", &a);
+ 	
+ 	if(a == 1){
+ 		printf("\aVocê desfere alguns golpes na árvore fazendo um pedaço grande de madeira cair e sua espada\nparece estar inteira...\n*Ainda*");
+ 		printf("\n\n(A durabildade de sua arma é visual, então repare bem nesses avisos!)\n\n");
+ 		printf("Guardando sua espada nas costas, você arrasta o pedaço de madeira para perto da árvore e segue seu caminho.");
+ 		b = b - 1;
+ 		c = c + 1;
+ 		getch();
+ 		break;
+	} else{
+		printf("\nEsperto... Você segue adiante.\n\n"); 
+		break;
+	} 
+	
+	case 2:
+	printf("Empunhando seu arco com uma mão, você tira de sua aljava uma flecha feita com fibras de vidro\ne penas brancas e vermelhas\n\n");
+	printf("Gostaria de disparar contra uma árvore?\n1.Sim\n2.Não\n");
+	scanf("%d", &a);
+	
+	if(a == 1){
+ 		printf("\nTudo a sua volta parece ter perdido o som, seu unico foco agora é a ponta de sua flecha.\nAo fundo se ouve um 'cráá'... você solta a corda\n\n*PSIUFFFF*\n\n");
+ 		printf("A ponta inteira de sua flecha penetrou o tronco, e nela ficou pendurada uma pena de um pássaro.\n");
+ 		b = b - 1;
+ 		c = c + 1;
+ 		printf("\n\n(Você ainda possui %d flechas!)\n*não cara, você não pode pegar essa que você acabou de atirar*\n\n", b);
+ 		printf("Então, você guarda seu arco colocando-o nas suas costas e segue em frente.");
+ 		getch();
+ 		break;
+	} else{
+		printf("\nEsperto... Você guarda sua flecha e segue adiante.\n\n"); 
+		break;
+	}
+	
+	case 3:
+	printf("Muitos pensariam que uma corrente não pode ser uma boa arma, porém ela não é apenas uma qualquer.");
+	printf("\nSua corrente é equipada com uma lâmina na ponta dela, fazendo com que seja extremamente letal!\n");
+	printf("\nTalvez queira experimentar-la contra uma árvore?\n1.Sim\n2.Não\n");
+	scanf("%d", &a);
+ 		
+		 if(a == 1){
+ 		printf("\nVocê posiciona seu pés para manter estabildade e rodando sua corrente cada vez mais rápido sente o vento\nbatendo em seu corpo. Essa é a hora de soltar!\n\n *KTCHIIIIN* \n\n");
+ 		printf("\nSua corrente forma uma ponte de sua mão até o tronco que foi perfurado e\naparentemente ela está sem nenhum arranhão.\n");
+ 		printf("\n\n\a(A durabildade de sua arma é visual, então repare bem nesses avisos!)\n\n");
+ 		b = b - 1;
+ 		c = c + 1;
+ 		getch();
+ 		printf("Você tira sua corrente da madeira e segue adiante. ");
+ 		break;
+	} else if(a == 2){
+		printf("\nEsperto... Você segue adiante.\n\n\n"); 
+		break;
+	}  else if(x >= 3) exit(0);
+}
+} else if(a == 2){
+	printf("Você segue adiante.");
+}  else if(a >= 3) exit(0);
+	
+	printf("\nMas pera aí... Antes de seguir temos que entender quem somos e onde estamos.\n");
+getch();
+	system ("cls");
+
+printf("\n\nNUMA PEQUENA VILAZINHA DA ESCÓCIA, NASCE...\n\n*qual é o seu nome mesmo?*\n");
+
+scanf("%s", &pers);
+pers[0] = toupper (pers[0]);
+
+printf("\nIsso! Eu tinha esquecido, desculpa.\n\n");
+getch();
+
+printf("Enfim, continuando...\nNUMA PEQUENA VILAZINHA DA ESCÓCIA, NASCE %s, UM NOBRE GUERREIRO COM ESPIRITO DE VENCEDOR!\nSUA FAMÍLIA ERA MUITO INFLUENTE PELAS REDONDEZAS.", strupr(pers));
+printf(" ERAM CONHECIDOS PELO DOM INCRÍVEL QUE A FAMÍLIA INTEIRA TINHA.\nTODOS SABIAM FAZER BOLOS ESPETACULARES...\n*Ué, só porque eu te pedi pra escolher uma arma não significa que você já começa lutando...*\n\n");
+getch();
+
+strlwr(pers);
+pers[0] = toupper (pers[0]);
+
+printf("%s era um cara normal, acordava cedo, batia o dedo na quina, ia trabalhar...  Gente da gente mesmo.\n", pers);
+printf("Quando uma certa manhã...\n\n");
+getch();
+printf("Você acorda, olha para seu relógio e são 06:37. Deseja levantar ou dormir mais um pouco?\n1.Levantar\n2.Voltar a dormir\n");
+scanf("%d", &d);
+
+if(d == 2){
+	printf("\n- Eles conseguem ficar mais 3 horinhas sem minha ajuda.\nPensa %s em voz alta e volta a dormir\n\n", pers);
+	printf("*DUAS HORAS DEPOIS*");
+	printf("\n\nUm cheiro forte de queimado te acorda e você levanta meio dormindo ainda. Desce as escadas de sua casa e percebe que\nnão tem ninguem na cozinha mas o forno está ligado.");
+	printf(" Você chama pelos membros de sua família, porém ninguem responde.\nEntão, decide olhar pela janela para ver se alguem está tomando um sol ou sei lá... ");
+	printf("O que você vê te assusta muito\ncasas destruídas, fogo, pessoas no chão... um cenário apocalíptico\n\n");
+	printf("- O que aconteceu aqui?\nDiz %s assustado!\n\n\n...\n\n\nBom, será que valeu a pena 2 horas a mais de sono?\n\n\nFIM.", pers);
+	getch();
+	exit(0);
+	
+} else if(d == 1){
+	printf("\n- O dever me chama!\nDiz %s super animado.\n", pers);
+}  else if(x >= 3) exit(0);	
+getch();
+system ("cls");
+
+printf("Pulando da cama você se prepara para mais um dia de trabalho.\nSua rotina matinal é muito boa, escova os dentes, toma café (sempre com leite), conversa\ncom a família, enfim, coisas comuns.");
+printf("\nO lugar onde você vende bolo é do lado da sua casa e isso te ajuda muito, pois você\nconsegue fazer o bolo em casa e vender lá.\n\n");
+printf("*ALGUMAS HORAS DEPOIS*");
+printf("\n\nO movimento naquela região normalmente é muito forte, mas hoje estava diferente, parecia\nque o pessoal estava relutante em sair de casa... Estranho!");
+printf("Você decide dar uma olhada em volta para ver o que está acontecendo... \n*Pera, quer ir?*\n1.Sim\n2.Não");
+scanf("%d", &a);
+
+if(a == 1){
+	printf("");
+	
+	
+} else if(a == 2){
+	
+} else if(a >= 3) exit(0);
+
+
+
+
+
+
+
+
+
+
+//  exit(0);
+//	system ("cls");
+
+getch();
+ }

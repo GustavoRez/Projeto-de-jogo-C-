@@ -8,11 +8,16 @@
 int main (){
 	setlocale(LC_ALL, "Portuguese");
 	
-	int i, a, b, c, d, x, y, z;
+	int a, b, c, d, e, i, x, y, z, vida;
 	char nome[20], pers[10];
 	
+	vida = 15;
 	b = 20;
 	c = 0;
+	prov = 10
+	errou = 0;
+	
+	printf("\n\nJOGO EM DESENVOLVIMENTO, NÃO USE NOMES COMPOSTOS!!\n\n\n\n");
 	
 	printf("Escolha uma arma:\n\n1.Espada\n2.Arco\n3.Corrente\n");
 	scanf("%d", &x);
@@ -68,7 +73,6 @@ switch(x){
  		printf("\aVocê desfere alguns golpes na árvore fazendo um pedaço grande de madeira cair e sua espada\nparece estar inteira...\n*Ainda*");
  		printf("\n\n(A durabildade de sua arma é visual, então repare bem nesses avisos!)\n\n");
  		printf("Guardando sua espada nas costas, você arrasta o pedaço de madeira para perto da árvore e segue seu caminho.");
- 		b = b - 1;
  		c = c + 1;
  		getch();
  		break;
@@ -85,7 +89,6 @@ switch(x){
 	if(a == 1){
  		printf("\nTudo a sua volta parece ter perdido o som, seu unico foco agora é a ponta de sua flecha.\nAo fundo se ouve um 'cráá'... você solta a corda\n\n*PSIUFFFF*\n\n");
  		printf("A ponta inteira de sua flecha penetrou o tronco, e nela ficou pendurada uma pena de um pássaro.\n");
- 		b = b - 1;
  		c = c + 1;
  		printf("\n\n(Você ainda possui %d flechas!)\n*não cara, você não pode pegar essa que você acabou de atirar*\n\n", b);
  		printf("Então, você guarda seu arco colocando-o nas suas costas e segue em frente.");
@@ -106,7 +109,6 @@ switch(x){
  		printf("\nVocê posiciona seu pés para manter estabildade e rodando sua corrente cada vez mais rápido sente o vento\nbatendo em seu corpo. Essa é a hora de soltar!\n\n *KTCHIIIIN* \n\n");
  		printf("\nSua corrente forma uma ponte de sua mão até o tronco que foi perfurado e\naparentemente ela está sem nenhum arranhão.\n");
  		printf("\n\n\a(A durabildade de sua arma é visual, então repare bem nesses avisos!)\n\n");
- 		b = b - 1;
  		c = c + 1;
  		getch();
  		printf("Você tira sua corrente da madeira e segue adiante. ");
@@ -139,7 +141,7 @@ getch();
 strlwr(pers);
 pers[0] = toupper (pers[0]);
 
-printf("%s era um cara normal, acordava cedo, batia o dedo na quina, ia trabalhar...  Gente da gente mesmo.\n", pers);
+printf("%s era um cara normal, acordava cedo, batia o dedinho na quina, ia trabalhar...  Gente da gente mesmo.\n", pers);
 printf("Quando uma certa manhã...\n\n");
 getch();
 printf("Você acorda, olha para seu relógio e são 06:37. Deseja levantar ou dormir mais um pouco?\n1.Levantar\n2.Voltar a dormir\n");
@@ -164,27 +166,115 @@ system ("cls");
 printf("Pulando da cama você se prepara para mais um dia de trabalho.\nSua rotina matinal é muito boa, escova os dentes, toma café (sempre com leite), conversa\ncom a família, enfim, coisas comuns.");
 printf("\nO lugar onde você vende bolo é do lado da sua casa e isso te ajuda muito, pois você\nconsegue fazer o bolo em casa e vender lá.\n\n");
 printf("*ALGUMAS HORAS DEPOIS*");
-printf("\n\nO movimento naquela região normalmente é muito forte, mas hoje estava diferente, parecia\nque o pessoal estava relutante em sair de casa... Estranho!");
-printf("Você decide dar uma olhada em volta para ver o que está acontecendo... \n*Pera, quer ir?*\n1.Sim\n2.Não");
+printf("\n\nO movimento naquela região normalmente é muito forte, mas hoje estava diferente, parecia\nque o pessoal estava relutante em sair de casa... Estranho!\n");
+printf("Você decide dar uma olhada em volta para ver o que está acontecendo... \n\n1.Dar uma olhada.\n2.Ficar na loja.\n");
 scanf("%d", &a);
 
 if(a == 1){
-	printf("");
+	printf("\nVocê decide sair na calçada pra ver se descobre algo, e de fato você descobre,\num cara correndo em sua direção gritando\n\n- PEGUE ALGO PARA SE DEFENDER!! ELES ESTÃO VINDO!!\n\n");
+	printf("Completamente em choque, você volta pra loja, pega ");
+
+if(x == 1){
+	printf("uma barra de ferro e usa para descer a porta, já aproveitando a barra para se defender.");
+} else if(x == 2){
+	//TESTAR APARTIR DAQUI
+	printf("o arco de seu avô, que convenientemente era praticante\nde arqueria. Sem hesitar, pega o item que estava sendo usado como enfeite para se defender.");
+} else{
+	printf("a primeira coisa que vê em sua frente num lapso de desespero...\n- Uma corrente?! Vai ter que servir.");
+}
+
 	
-	
-} else if(a == 2){
+} else if(a == 2){  
+	printf("\nMelhor não arriscar...\nVocê permanece dentro da loja\n\n");
+	printf("Alguns segundos depois passa um homem correndo bem na sua frente, ele parecia assustado.\n\n");
+	printf("- Pode ser só um cara fazendo uma corri..!!\n\nUm barulho muito grande interrompe sua linha de pensamento. Parecia vidros sendo quebrados,\n");
+	printf("alarmes de carro apitando e uma multidão enfurecida.\nEstremamente assustado você corre para ver o que era aquilo, e era realmente o que parecia.\n");
+	printf("Você vê uma legião de pessoas vestidas com uma roupa preta e uma cobra desenhada no peito destruindo\nTUDO pela frente.");
+	printf("Com um pensamento muito rápido, você decide fechar a porta da loja. Porém, antes que você consiga\nabaixa-la por completo, você é atingido por um caco de vidro.\n");
+	vida = vida - 1;
+	printf("\a\n -1 de vida\n");
 	
 } else if(a >= 3) exit(0);
 
+printf("\n\nVocê sai pela porta dos fundos e vai para sua casa ver se ta tudo bem por lá.\n");
+printf("Chegando perto uns barulhos estranhos começam a sair de sua casa.\n\nDeseja fugir ou lutar?\n1.Lutar\n2.Fugir\n");
+scanf("%d", &e);
+if (e == 2){
+	printf("\n- Estou em desvantagem, seria loucura entrar lá.\n\nVocê decide fugir de sua casa e ir para algum lugar seguro. O problema é que o lugar seguro mais perto é fora\nda cidade.");
+}else if(e == 1){
+	printf("- Não posso deixar tudo pra trás, minha família está aí.\n\nVocê decide ficar e lutar pelo que é seu!\nAvançando cautelosamente, o barulho fica cada vez mais forte (igual seu medo), porém você não pode parar agora.\n");
+	printf("Entrando pela janela se esforçando ao máximo para não fazer barulho, você pisa acidentalmente num caco de vidro.\n\n...\n\nTodo som vindo de dentro sua casa desvaneceu, e aquele silêncio era ensurdecedor. Congelado com medo de fazer\nqualquer outro barulho,");
+	printf(" você da seu primeiro passo em direção ao 'ex'som.\nAtravessando a porta, uma pessoa desconhecida aparece dobrando o corredor.");
+	if (x == 1){
+		if(c >= 1){
+			printf("\nCom sua barra em mãos, você dá uma investida pra cima do cara e fácilmente consegue se livrar dele sem fazer muito som.\n\n");
+			prov = prov - 1;
+			c = c + 1;
+		}else{
+			prov = prov - 1;
+			c = c + 1;
+			vida = vida - 1;
+			errou = errou + 1;
+			printf("\nCom sua barra em mãos, você da uma investida meio torta, pois nunca tinha levantado a mão para bater\nem ninguém, você sofre um corte no braço. Ele fez um pouco de barulho espero que\nisso não me prejudique.\n\n");
+		}	printf("\a-1 de vida\n\n");
+	}else if(x == 2){
+		if(c >= 1){
+			printf("\nCom uma precisão quase que impecável, você realiza um disparo e consegue uma eliminação silenciosa.\n- Uau! Isso deve estar no meu sangue.\n\n");
+			prov = prov -1;
+			c = c + 1;
+		}else{
+			printf("\nApesar do seu vô gostar do esporte, ele nunca chegou a te ensinar.\nVocê tenta fazer um disparo rápido porém se embaralha e acaba atirando pela janela.\n");
+			printf("\nUma sensação de despero toma conta do seu corpo, então, arrancando uma flecha de sua aljava,\nvocê corre em direção dele e apunhala sua jugular. Ele fez um pouco de barulho espero que\nisso não me prejudique.\n\n");
+			prov = prov - 2;
+			c = c + 1;
+			errou = errou + 1;
+		}
+	} else if (x == 3){
+		if(c >= 1){
+			printf("\nAlgo como se fosse um choque faz você se projetar pra cima do cara e, pensando durante o trajeto\ncomo ia usar a corrente, você pula em cima dele e usa ela para estrangular-lo, que silenciosamente\nfoi parando de se debater aos poucos.\n- Graças a Deus ele não fez barulho!\n\n");
+			prov = prov - 1;
+			c = c + 1;
+		}else{
+			printf("\nCompletamente perdido sobre como ia usar a corrente, você se aproxima do cara e tenta 'chicotear' ele\ncom a corrente... Obviamente sem êxito.\n\n- Onde eu estava com");
+			printf(" a cabeça achando que isso ia funcion...\nQuando um soco na boca te acorda. Meio tonteado você consegue revidar.\n\n*Aquelas aulas de muay tay valeram a pena.*\n\n");
+			prov = prov - 1;
+			c = c + 1;
+			vida = vida -1;
+			errou = errou + 1;
+			printf("Ele fez um pouco de barulho espero que isso não me prejudique.\n\n");
+			printf("\a-1 de vida\n\n");
+		}
+	} 
+	printf("Entrando mais afundo na casa, você vai percebendo que APARENTEMENTE não tem mais ninguém, nem mesmo sua família.\nUma sensação de desespero começa a crescer dentro de seu corpo e ");
+		
+		if(errou != 0){
+			printf("derrepente uma horda de pessoas\ncomeça a cercar sua casa fazendo muito barulho. O desespero triplica e você não sabe o que fazer.\n");
+			printf("E num ato que muitos julgariam covardia, porém foi um ato de inteligência, você foge...");
+			getch();
+			printf("\nNão sozinho, quando olha para trás um emaranhado de gente está furioso te perseguindo. Com a adrenalina do seu corpo subindo,\nvocê corre o mais rápido que pode, sem nem hesitar.\n");
+		} else {
+			printf("Sem mais nenhuma esperança, você foge triste e completamente desolado. Porém, um último pensamento te motiva,\no pensamento de ~VINGANÇA~\n\n");
+		}
+  }else exit(0);
+  getch();
+system ("cls");
+	//DUAS HORAS DEPOIS
+	//DETALHAR PAISAGEM
+  //CONTINUANDO SUA JORNADA VOCE PARA PARA DESCANSAR E ACHA UM VILAREJO NO MEIO DAS MONTANHAS 
+	printf("*ALGUMAS HORAS DEPOIS*\n\n");
+	printf("Depois de muito tempo andandando, você dá conta de que se perdeu no meio de uma floresta.\nTudo era muito estranho, pois mesmo tendo vivido sua vida inteira naquela cidade,\n nunca ninguém citou nada sobre aquela floresta.\n");
+	printf("\nEla parecia uma floresta clássica daqueles filmes de terror, árvores extremamente altas cobrindo a\nluminosidade do sol, sem nenhum rio ou riacho por perto, terra pra todo lado...\n");
+	printf("Cansado de uma longa caminhada, com a felicidade completamente sugada, você acha uma árvore com\num galho *aparentemente* resistente e, visando sua segurança, sobe nele para descansar.\n");
+	printf("No topo daquele tronco a vista era íncrivel! Mesmo com os pinheiros altos, era possível ver justamente o lugar\nonde o sol se punha.");
+	printf("\nPórem, essa não foi a melhor coisa que %s vira... Um vilarejo no meio de umas montanhas fez seus\nolhos brilharem mais que aquele pôr do sol, e não parecia estar tâo longe\n", pers);
+	
 
 
 
 
 
 
-
-
-
+//  "%s", &pers
 //  exit(0);
 //	system ("cls");
 

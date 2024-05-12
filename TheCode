@@ -8,16 +8,20 @@
 int main (){
 	setlocale(LC_ALL, "Portuguese");
 	
-	int a, b, c, d, e, f, g, h, i, j, k, l, x, y, z, vida, prov, errou, John, Mary;
+	int a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, x, y, z, vida, prov, errou, John, Mary;
 	char nome[20], pers[10];
 	errou = 0;
 	
-	vida = 15; // VIDA PERSONAGEM
+	vida = 10; // VIDA PERSONAGEM
 	b = 20;	   // NÃO SEI	
 	c = 0;     // HABILIDADE
 	prov = 10; // DURABILIDADE ARMA
-	John = 0;  //STATUS COM O JOHN
-	Mary = 0;  //STATUS COM A MARY
+	John = 20;  //STATUS COM O JOHN
+	Mary = 20;  //STATUS COM A MARY
+	
+	
+	
+
 
 	
 	printf("\n\nJOGO EM DESENVOLVIMENTO, NÃO USE NOMES COMPOSTOS!!\n\n\n\n");
@@ -53,12 +57,12 @@ if(y == 1){
 } else if(y == 2){
 	printf("\nQual nome você gostaria de colocar?\n");
 	scanf("%s", &nome);
-
+	nome[0] = toupper (nome[0]);
 	printf("\n%s é o novo nome de sua arma?!\n1.Sim\n2.Não\n", nome);
 	scanf("%d", &z);
 	
 if(z == 1){
-	printf("\nTudo bem, você e sua arma fazem parte de um só agora!\n\n");
+	printf("\nTudo bem, você e %s fazem parte de um só agora!\n\n", nome);
 } else if(z == 2){
 	printf("\nTriste né, amigão... O nome dela vai continuar sendo %s\n\n", nome);	
 } else if(z >= 3) exit(0);
@@ -149,7 +153,7 @@ pers[0] = toupper (pers[0]);
 printf("%s era um cara normal, acordava cedo, batia o dedinho na quina, ia trabalhar...  Gente da gente mesmo.\n", pers);
 printf("Quando uma certa manhã...\n\n");
 getch();
-printf("Você acorda, olha para seu relógio e são 06:37. Deseja levantar ou dormir mais um pouco?\n1.Levantar\n2.Voltar a dormir\n");
+printf("Você acorda, olha para seu relógio e é 06:37. Deseja levantar ou dormir mais um pouco?\n1.Levantar\n2.Voltar a dormir\n");
 scanf("%d", &d);
 
 if(d == 2){
@@ -157,7 +161,7 @@ if(d == 2){
 	printf("*DUAS HORAS DEPOIS*");
 	printf("\n\nUm cheiro forte de queimado te acorda e você levanta meio dormindo ainda. Desce as escadas de sua casa e percebe que\nnão tem ninguem na cozinha mas o forno está ligado.");
 	printf(" Você chama pelos membros de sua família, porém ninguem responde.\nEntão, decide olhar pela janela para ver se alguem está tomando um sol ou sei lá... ");
-	printf("O que você vê te assusta muito\ncasas destruídas, fogo, pessoas no chão... um cenário apocalíptico\n\n");
+	printf("O que você vê te assusta muito...\ncasas destruídas, fogo, pessoas no chão... um cenário pós-apocalíptico\n\n");
 	printf("- O que aconteceu aqui?\nDiz %s assustado!\n\n\n...\n\n\nBom, será que valeu a pena 2 horas a mais de sono?\n\n\nFIM.", pers);
 	getch();
 	exit(0);
@@ -357,10 +361,11 @@ system ("cls");
 		
 	printf("\n\n*MINUTOS MAIS TARDE*\n\n");
 	getch();
+	system("cls");
 	printf("%s - Realmente aqui tudo é muito lindo!\n\n", pers);
 	printf("Rapaz - Hahaha. Sim, nós prezamos muito pela limpeza da vila e felicidade dos moradores.\n\n");
 	printf("%s - Eu já to a um tempo aqui e nem sei o nome de vocês...\n\n", pers);
-	printf("Rapaz - Prazer, meu nome é John!	Diz ele estendendo a mão para você.\n\n");
+	printf("Rapaz - Prazer, meu nome é John!- Diz ele estendendo a mão para você.\n\n");
 	printf("Menina - E eu sou Mary! Tipo os caçadores de bruxa hahaha.\n\n");
 	printf("Vocês sentam em um banquinho de mármore numa sombra de uma árvore.\n\n");
 	printf("%s - Vocês acham que teria alguma chance de eu me tornar um guarda com vocês?\n\n", pers);
@@ -405,7 +410,7 @@ system ("cls");
 				if (x == 1){
 					printf("aguarda o melhor momento para conseguir acerta-la.\nEntão, ela dá os primeiros passos e tenta um corte da direita para esquerda no toráx.\n");
 					printf("Você pode ter se enganado, mas tem a sensação de que ela atacou devagar.\n");
-					printf("Como um guerreiro nato, %s vê nessa falha dela um momento para fazer atacar suas costas.\nLevantando a espada e pensando se acertaria para machucar ou apenas para dizer que ganhou, você sente\nalgo levantando seus pés e te derrubando no chão.\n\n", pers);
+					printf("Como um guerreiro nato, %s vê nessa falha dela um momento para atacar suas costas.\nLevantando a espada e pensando se acertaria para machucar ou apenas para dizer que ganhou, você sente\nalgo levantando seus pés e te derrubando no chão.\n\n", pers);
 					printf("Mary - Nada como uma boa e velha distração.\nDiz ela apontando a espada bem entre seus olhos.\n\n");
 					printf("Deseja dizer algo?\n1.'Isso foi trapaça!'\n2.'Você realmente não deixa barato...'\n3.Dar um tapa na espada.\n4.Não.\n\n");
 					scanf("%d", &l);
@@ -417,7 +422,7 @@ system ("cls");
 							Mary = Mary++;
 						} else if(l == 3){
 							printf("Mary - Ei!! Você aceitou participar disso, não aja como criança!");
-							Mary = Mary - 2;
+							Mary = Mary - 3;
 						} else if(l == 4){
 							printf("Mary - O gato comeu sua língua ou eu cortei ela?\n\n");
 							printf("%s - Ha ha ha... Muito engraçado...\nDiz você em tom sarcástico.", pers);
@@ -437,7 +442,7 @@ system ("cls");
 							Mary = Mary++;
 						} else if(l == 3){
 							printf("Mary - Ei!! Você aceitou participar disso, não aja como criança!");
-							Mary = Mary - 2;
+							Mary = Mary - 3;
 						} else if(l == 4){
 							printf("Mary - O gato comeu sua língua?\n\n");
 							printf("%s - Ha ha ha... Muito engraçado...\nDiz você em tom sarcástico.", pers);
@@ -458,7 +463,7 @@ system ("cls");
 							Mary = Mary++;
 						} else if(l == 3){
 							printf("Mary - Ei!! Você aceitou participar disso, não aja como criança!");
-							Mary = Mary - 2;
+							Mary = Mary - 3;
 						} else if(l == 4){
 							printf("Mary - O gato comeu sua língua ou eu cortei ela?\n\n");
 							printf("%s - Ha ha ha... Muito engraçado...\nDiz você em tom sarcástico.", pers);
@@ -500,10 +505,10 @@ system ("cls");
 					printf("John - Uma corrente?! Tem certeza? Então tudo bem...\nDiz ele entregando sua corrente.\n\n");
 					printf("%s - Sim, já estou muito apegado em %s pra deixar-lá pra trás!\n\n", pers, nome);
 					
-				} else exit(0);
+				} else exit(0); 
 				
 			printf("John - Ok! Então vamos começar?!\n\n");
-			printf("%s - Vamos!\nDiz você se preaparando.\n", pers);
+			printf("%s - Vamos!\nDiz você se preaparando.\n\n", pers);
 			printf("Você quer:\n1.Lutar com cautela.\n2.Sair correndo e gritando pra cima dele.\n");
 			scanf("%d", &k);
 		
@@ -512,7 +517,7 @@ system ("cls");
 				if (x == 1){
 					printf("aguarda o melhor momento para conseguir acerta-lo.\nEntão, ele dá os primeiros passos e tenta um corte da direita para esquerda no toráx.\n");
 					printf("Você pode ter se enganado, mas tem a sensação de que ele atacou devagar.\n");
-					printf("Como um guerreiro nato, %s vê nessa falha dele um momento para fazer atacar suas costas.\nLevantando a espada e pensando se acertaria para machucar ou apenas para dizer que ganhou, você sente\nalgo levantando seus pés e te derrubando no chão.\n\n", pers);
+					printf("Como um guerreiro nato, %s vê nessa falha dele um momento para atacar suas costas.\nLevantando a espada e pensando se acertaria para machucar ou apenas para dizer que ganhou, você sente\nalgo levantando seus pés e te derrubando no chão.\n\n", pers);
 					printf("John - Você está bem?\nDiz ele estendendo a mão para você levantar..\n\n");
 					printf("Deseja dizer algo?\n1.'Isso foi trapaça!'\n2.'Se isso é estar cansado...'\n3.Dar um tapa na mão dele.\n4.Não.\n\n");
 					scanf("%d", &l);
@@ -525,7 +530,7 @@ system ("cls");
 							John = John++;
 						} else if(l == 3){
 							printf("John - Calma! Não precisa agir assim!\nEle parece chateado.");
-							John = John - 2;
+							John = John - 3;
 						} else if(l == 4){
 							printf("John - %s? Quer ajuda?\n\n", pers);
 							printf("%s - Ah, sim! Fiquei até desnorteado.", pers);
@@ -546,7 +551,7 @@ system ("cls");
 							John = John++;
 						} else if(l == 3){
 							printf("John - Calma! Não precisa agir assim!\nEle parece chateado.");
-							John = John - 2;
+							John = John - 3;
 						} else if(l == 4){
 							printf("John - %s? Quer ajuda?\n\n", pers);
 							printf("%s - Ah, sim! Fiquei até desnorteado.", pers);
@@ -568,7 +573,7 @@ system ("cls");
 							John = John++;
 						} else if(l == 3){
 							printf("John - Calma! Não precisa agir assim!\nEle parece chateado.");
-							John = John - 2;
+							John = John - 3;
 						} else if(l == 4){
 							printf("John - %s? Quer ajuda?\n\n", pers);
 							printf("%s - Ah, sim! Fiquei até desnorteado.", pers);
@@ -603,13 +608,182 @@ system ("cls");
 	printf("Mary - Olha! Parece que alguem ficou animado... São basicamente duas provas, uma teórica e\noutra prática. Na prova teórica você precisará saber de tudo um pouco, por exemplo\nqual planta pode e não pode comer, como fabricar ou consertar suas armas...\n\n");
 	printf("%s - E-eu não faço ideia de nada disso, nunca aprendi.\n\n", pers);
 	printf("Mary - Não precisa se preocupar, nós podemos ser seus tutores!\n\n");
+	printf("%s - NÃO ACREDITO!!! E QUANDO A GENTE PODE COMEÇAR???\n\n", pers);
+	printf("Eles fazem uma cara de surpresa com a sua reação\n\n");
+	printf("%s - Desculpa, eu acho que me empolguei um pouco... - Diz você limpando a garganta - Quando podemos começar?\n\n", pers);
+	printf("John - Hahaha, não precisa se preocupar. Nós só ficamos surpresos porque ninguém nunca se\nvoluntariou para ser guarda daqui. Dizem ser um lugar 'amaldiçoado', ou coisa parecida.");
+	printf("\n\nMary - Mas nós nos voluntariamos, sempre gostamos de brincar de polícia e ladrão quando crianças.\n\n");
+	printf("%s - Quando crianças??\n\n", pers);
+	printf("John - Sim! Acho que esquecemos de comentar, Mary e eu somos irmãos.\n\n");
+	printf("%s - Que bacana! Bem que vocês tem uma semelhança mesmo, só percebi agora. E quanto aos seus pais?\n\n", pers);
+	printf("...\n");
+	
+	getch();
+	system("cls");
+	
+	printf("Os dois ficam em silencio e o clima de constragimento se tonifica, juntamente com o frio.\n\n");
+	printf("%s - Ah... Desculpa, eu não qui-\n", pers);
+	printf("Mary - Tudo bem... - Diz ela te interrompendo - Nós estamos bem.\n\n");
+	printf("John - É... Tá ficando frio, né?! O que acham de entrarmos?\n\n");
+	printf("%s - Acho uma boa ideia. Estou faminto!", pers);
+	printf("\n\n\nDentro de uma 'casa principal', que fica no meio da vila, você vê um aglomerado de pessoas.\n\n\n");
+	printf("%s - O que é esse lugar?\n\n", pers);
+	printf("Mary - Aqui é onde todo mundo vem quando quer comer, estudar ou praticar sua pontaria e\ncombate. Como se fosse um acampamento.\n\n");
+	printf("Você assente com a cabeça, mesmo sem nunca ter ido à um.");
+	
+	getch();
+	system("cls");
+	
+	printf("\n\n*QUATRO PRATOS DE COMIDA DEPOIS*\n\n");
+	printf("John - Você realmente não está aqui pra brincadeira.... quatro pratos?? Acho que é o\nnovo recorde da casa!\n\n");
+	printf("%s - É... já fazia um tempo que não comia nada hihi. Mas enfim, vamos voltar a falar dos\ntreinos. Quando nós vamos começar?\n\n", pers);
+	printf("John - Por mim começamos amanhã mesmo.\n\n");
+	printf("Mary - Por mim também, mas acho que você deveria escolher apenas um para te treinar. Para não\nter divergência de treino, podemos dizer que eu sou mais casca grossa e\nele mais leve.\n\n");
+	printf("Com quem você vai querer treinar?\n1.Treinar com Mary.\n2.Treinar com John.\n\n");
+	scanf("%d", &m);
+	
+	if(m == 1){
+		if (Mary <= 18){
+			Mary = Mary--;
+			printf("Mary - Não sei se quero te treinar. Acho que nosso 'santo' não bate. John, você pode treinar-lo?\n\n");
+			printf("Meio desconcertado, John aceita.\n\n");
+			getch();
+		} else{
+			Mary = Mary++;
+			printf("Mary - Hum... Acho que você não entendeu que sou uma pessoa áspera, como muitos dizem.\n\n");
+			printf("%s - Eu gosto de desafio, e como você mesma disse, ele não é tão 'casca grossa'.\n\n", pers);
+			printf("Ela da um sorrisinho de canto de boca.\n\n");
+		}	getch();
+	} else if(m == 2){
+		if (John <= 18){
+			John = John--;
+			printf("John - Não me leve a mal, %s. Mas acho que não vamos nos dar muito bem. Mary pode treinar-lo tão bem\nquanto eu iria.\n\n", pers);
+			printf("A cara de desconforto do John é inegável.\n\n");
+			getch();
+		} else{
+			John = John++;
+			printf("John - Ótima escolha, parceiro! Mary diz que meu estilo de briga é mais 'leve', mas pergunta quem sempre ganhava\nas guerras de travesseiros!\nDiz ele se gabando e olhando para Mary.\n\n");
+			printf("Mary - Olha... Eu não vou falar nada.");
+			printf("%s - Sem briga crianças. Eu confio em você John, mas ao invés de almofadas... poderiamos usar armas de verdade?!\n\n", pers);
+			printf("John - Bem engraçadinho.\nVocês três dão risada em sincronia.\n\n");
+		} 	getch();
+	} else exit(0);
+	
+	printf("Saindo de lá, o que deseja fazer?\n1.Pedir um lugar para dormir.\n2.Pedir para treinar com o/a mestre/a.");
+	scanf("%d", &n);
+	
+	if(n == 1){
+		John--;
+		Mary--;
+		printf("\n\n%s - Uff, hoje foi um dia cheio! Acho que preciso descansar um pouco.\n\n", pers);
+		printf("A cara de decepção é evidente nos dois.\n\n\n");
+		printf("Mary - Mas já? Ainda são - ela olha no relógio de pulso - 17 e 34.\n\n");
+		printf("John - Não quer nem treinar, ou pelo menos ver o centro de treinamento?");
+		printf("%s - Hoje não, depois do almoço é difícil ficar em pé.", pers);
+		John--;
+		Mary--;		
+	} else if(n == 2){
+		printf("\n\n%s - Eu acho que vou dar uma passada no lugar dos treinos.\n\n", pers);
+		
+			if (m == 1){
+				John--;
+				printf("John - Vai lá, Mary! Não é pra pegar leve com o novato.\n\n");
+				printf("Mary - Pode deixar!\nAfirma ela com um olhar que parecia dizer 'sua alma não será perdoada'.");
+			} else{
+				Mary--;
+				printf("Mary - Pff... Vão lá aprender 'como fugir de uma briga em 3 etapas'.\n\n");
+				printf("John - Até o final do ano ele vai lutar melhor que você!");
+				printf("%s - Você sabe que já estamos em Novembro, né?!\n\n", pers);
+				printf("John - ~primeira lição: intimidação é o que faz você ganhar a luta antes mesmo de começar.~\nDiz ele sussurrando.\n\n\n");
+				printf("*O clima entre os irmãos parece ter esquentado...*");
+			}
+			getch();
+			system ("cls");
+		printf("\n\n\nUm tempinho andando e vocês chegam à um lugar que muito se assemelha a um santuário.\n\n");
+		printf("%s - Uau!! Esse lugar é incrível!\n\n", pers);
+			if(m == 1){
+				printf("Mary - É aqui que você vai aprender a lutar como um verdadeiro guerreiro.\n\n");
+				printf("%s - Não vejo a hora de começar.\nDiz você olhando para o teto e paredes com desenhos antigos.\n\n", pers);
+				printf("");
+			} else{
+				printf("John - Você ainda não viu nada!! Vem aqui dentro conhecer o CT!\n\n");
+				printf("%s - CT? É o cara que te ensinou?\n\n", pers);
+				printf("John - Hahahaha... Não. CT é a sigla para centro de treinamento.\n\n");
+				printf("%s - Haha, faz sentido... Não vejo a hora de começar.\nDiz você olhando para o teto e paredes com desenhos antigos.\n\n", pers);
+			}
+		
+		printf("Você e seu sensei se dirigem para mais adentro do templo e chegam a um espaço aberto com alguns\nmanequins posicionados aleatoriamente no vasto campo.\n\n");
+			
+			if(m == 1){
+				printf("Mary - O que me diz?\nPergunta ela estendendo seu braço para o campo.\n\n");
+				printf("O que você vê é um campo de areia com 10 bonecos espalhados, essa parte do centro de treinamento\nnão possui teto, então, a paisagem se enriquece com um sol iluminando tudo.\n");
+				printf("Os manequins pareciam ser feitos de um material resistente, porém revestidos com um tecido macio.\n\n");
+				printf("Mary - Eai?\nDiz ela reforçando a pergunta.\n\n");
+				printf("O que dizer a ela?\n1.Gostei bastante!\n2.Sendo sincero...");
+				scanf("%d", &o);
+				
+					if(o == 1){
+						Mary++;
+						printf("Mary - Que bom!! Eu sabia que você ia gostar!\nEla realmente parece orgulhosa.\nMary - Agora vai treinar uns golpes naquele boneco ali.\n\n");
+						printf("%s - Pode deixar. Você me dá uma ajudinha?\n\n", pers);
+							if(Mary < 15){
+								printf("Mary - Você consegue fazer sozinho, não?!\nDiz ela virando as costas e deixando o campo.");
+							} else{
+								printf("Mary - Hm... Posso sim, mas não vai se acostumando!\nDiz ela dando uma risadinha.\n\n");
+								Mary++;
+							}
+					} else{
+						Mary = Mary - 2;
+						printf("Mary - TÁ FALANDO SÉRIO?? .... olha, eu tentei ser uma boa tutora e, além disso, tentei ser sua amiga. Mas se você continuar\nassim não vai ter como!\n\n");
+						printf("%s - que seja...\nDiz você baixinho a caminho de dar uns soquinhos nos bonecos.\n\n", pers);
+						printf("Mary - O que você disse??\n\n");
+						printf("&s - NADA!\nDiz dando um soco mais forte.\n\n", pers);
+						printf("Mary sai frustrada de lá.\n\n");
+					}
+			} else{
+				printf("John - Da uma olhada nisso!\nDiz ele estendendo seu braço para o campo.\n\n");
+				printf("O que você vê é um campo de areia com 10 bonecos espalhados, essa parte do centro de treinamento\nnão possui teto, então, a paisagem se enriquece com um sol iluminando tudo.\n");
+				printf("Os manequins pareciam ser feitos de um material resistente, porém revestidos com um tecido macio.\n\n");
+				printf("John - Eai? Curtiu?\nPergunta ele muito entusiasmado.\n\n");
+				printf("O que dizer?\n1.Gostei bastante!\n2.Sendo sincero...");
+				scanf("%d", &o);
+				
+					if(o == 1){
+						John++;
+						printf("John - É muito massa, né?! Você pode vir aqui quando você quiser.\nEle realmente parece orgulhoso.\nJohn - Agora vamos treinar alguns golpes básicos.\n\n");
+						printf("%s - Beleza. Você me dá uma ajudinha?\n\n", pers);
+							if(John < 15){
+								printf("John - Sabe o que é... É q-que eu pr-preciso fazer uma coisa ali!\nDiz ele virando as costas e dando uma corridinha até a saída.");
+							} else{
+								printf("John - Claro. Pra começar ajeita a base e faz.......\n\n");
+								John++;
+							}
+					} else{
+						John = John - 2;
+						printf("John - TÁ FALANDO SÉRIO??....\nEle limpa a garganta.\nJohn - Sério?! Enfim, nós não temos outro lugar pra treinar...\n\n");
+						printf("%s - que seja...\nDiz você baixinho a caminho de dar uns soquinhos nos bonecos.\n\n", pers);
+						printf("John - Disse alguma coisa?\n\n");
+						printf("&s - NÃO!\nDiz dando um soco mais forte.\n\n", pers);
+						printf("John sai decepcionado com você.\n\n");
+					}
+			}
+			
+			printf("Aquele lindo sol foi se pondo e a brisa do luar foi tomando conta.\n\n");
+			printf("%s - Uff! Hoje foi um dia bem intenso!\nDiz você com a respiração ofegante.\n&s - Acho q vou pro quarto dar uma descansada.", pers, pers);		
+				getch();
+				system("cls");
+	} else exit(0);
+	
+	printf("Chegando no seu novo quarto, um de morador agora, você percebe que fora deixado um pacote com um bilhetinho em cima.\nAbrindo o papel, você lê o seguinte:\n\n~Agradecemos muito sua estadia e força de vontade para virar um guerreiro e nos ajudar.\nNós, organizadores da vila juntamente com John e Mary, deixamos um presente para você. Esperamos que goste! :D\n\n");
+	printf("%s - Que bacanas!! Mas por que será que John e Mary não me contaram nada? Acho que quiseram manter a surpresa.\n\n", pers);
+	printf("Deseja abrir o pacote?\n1.Abrir.\n2.Não abrir.");
+	
 
-
+	
 	
 
 
 
-//  "%s", &pers
 //  exit(0);
 //	system ("cls");
 
